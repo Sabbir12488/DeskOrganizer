@@ -1,0 +1,8 @@
+Please use forward slash '/' for directories
+
+source = C:/Users/User/Desktop
+photo = C:/Users/User/Pictures/From desktop
+screenshot = X:/Pictures/Screenshots
+video = C:/Users/User/Videos/From desktop
+txt_dir = X:/PDFs
+gimp_dir = D:/Gimp saves
