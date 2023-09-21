@@ -24,7 +24,7 @@ img = {".jpg", ".jpeg", ".jfif", ".pjpeg", ".pjp", ".png", ".PNG", ".JPG",
 vdo = {".webm", ".MTS", ".M2TS", ".TS", ".mov",".mp4",
        ".m4p", ".m4v", ".mxf"}
 
-txt = {".docx", ".doc",".pdf"}
+txt = {".docx", ".doc",".pdf"} ##I did IT!!
 
 saved = {".xcf", ".ai"}
 
