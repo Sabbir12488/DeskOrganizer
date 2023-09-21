@@ -18,15 +18,15 @@ import preloaded
     #gimp_dir = "D:/Gimp saves"
 
 #sets of file extentions
-img = {".jpg", ".jpeg", ".jfif", ".pjpeg", ".pjp", ".png",
-       ".gif", ".webp", ".svg", ".apng", ".avif",".raw",".RAW",".HEIC", ".tif"}
+img = {".jpg", ".jpeg", ".jfif", ".pjpeg", ".pjp", ".png", ".PNG", ".JPG",
+       ".gif", ".webp", ".svg", ".avif",".raw",".RAW",".HEIC", ".tif"}
 
 vdo = {".webm", ".MTS", ".M2TS", ".TS", ".mov",".mp4",
        ".m4p", ".m4v", ".mxf"}
 
-txt = {".docx", ".doc",".pdf"}
+txt = {".docx", ".doc",".pdf"} ##I did IT!!
 
-gimp = {".xcf"}
+saved = {".xcf", ".ai"}
 
 files_moved = 0
 
@@ -36,7 +36,7 @@ img_count = 0
 scr_count = 0
 vdo_count = 0
 txt_count = 0
-gimp_count = 0
+save_file_count = 0
 
 colorama.init(autoreset=True)
 
@@ -73,19 +73,19 @@ def is_vdo(file):
     return os.path.splitext(file)[1] in vdo
 def is_txt(file):
     return os.path.splitext(file)[1] in txt
-def is_gimp(file):
-    return os.path.splitext(file)[1] in gimp
+def is_save_files(file):
+    return os.path.splitext(file)[1] in saved
 
 os.chdir(source[1].strip())
 
 for file in os.listdir():
-    if is_vdo(file) or is_txt(file) or is_img(file) or is_gimp(file) or is_screenshot(file):
+    if is_vdo(file) or is_txt(file) or is_img(file) or is_save_files(file) or is_screenshot(file):
        item_count += 1
 
 os.chdir(dwn_dir)
 
 for file in os.listdir():
-    if is_vdo(file) or is_txt(file) or is_img(file) or is_gimp(file) or is_screenshot(file):
+    if is_vdo(file) or is_txt(file) or is_img(file) or is_save_files(file) or is_screenshot(file):
        item_count += 1
 
 if item_count > 0:
@@ -159,11 +159,11 @@ if permission == True:
                 print(str(file) + " already exists")
                 continue
         #moving gimp saves (photoshop saves will be added soon)
-        elif is_gimp(file):
+        elif is_save_files(file):
             if not os.path.exists(os.path.join(gimp_dir[1].strip(), file)):
                 shutil.move(file, gimp_dir[1].strip())
                 files_moved += 1
-                gimp_count += 1
+                save_file_count += 1
             else:
                 print(str(file) + " already exists")
                 continue
@@ -171,7 +171,7 @@ if permission == True:
     if not files_moved == 0:
         print()
         print(Back.MAGENTA + str(files_moved)+f" file(s) moved:"+Back.RESET+" Image: "+Fore.YELLOW+f"{str(img_count)} "+Fore.RESET+ "|| Screenshot: "+Fore.YELLOW+f"{str(scr_count)} "+Fore.RESET+
-                                              "|| Video: "+Fore.YELLOW+f"{str(vdo_count)} "+Fore.RESET+"|| Docs: "+Fore.YELLOW+f"{str(txt_count)} "+Fore.RESET+"|| Saves: "+Fore.YELLOW+f"{str(gimp_count)}")
+                                              "|| Video: "+Fore.YELLOW+f"{str(vdo_count)} "+Fore.RESET+"|| Docs: "+Fore.YELLOW+f"{str(txt_count)} "+Fore.RESET+"|| Saves: "+Fore.YELLOW+f"{str(save_file_count)}")
     else:
         print(Back.RED+"There is nothing to move")
 
