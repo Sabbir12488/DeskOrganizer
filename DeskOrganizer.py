@@ -5,7 +5,7 @@ import pathlib
 from pathlib import Path
 import re
 import shutil
-import pyfiglet
+#import pyfiglet
 import preloaded
 
 
@@ -35,10 +35,12 @@ def the_program():
     colorama.init(autoreset=True)
 
     with open('configurations/header.txt') as Header_txt:
-        text = Header_txt.read()
-        contents = pyfiglet.figlet_format(text = "DeskOrg", font = "graffiti")
-        print(Fore.CYAN + contents)
-        print(Fore.BLUE+text)
+        text = Header_txt.readlines()
+        print(Fore.CYAN + "".join(text[0:6]), end='')
+        print('')
+        print(Fore.BLUE + text[7], end='')
+        print(Fore.BLUE + text[8], end='')
+        print('')
 
     #oppeing the text file for directory
     text_file = open('configurations/directories.txt')
@@ -169,6 +171,7 @@ def the_program():
             print(Back.RED+"There is nothing to move")
 
 while True:
+    os.system('cls')
     the_program() 
     restart_input = input("Do it again? [y/n]: ") 
     if restart_input.lower() != "y": 
