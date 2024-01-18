@@ -5,4 +5,4 @@ photo = C:/Users/User/Pictures/From desktop
 screenshot = X:/Pictures/Screenshots
 video = C:/Users/User/Videos/From desktop
 txt_dir = X:/PDFs
-gimp_dir = D:/Gimp saves
+gimp_dir = D:/Saved files
