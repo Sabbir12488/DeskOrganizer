@@ -18,7 +18,7 @@ def the_program():
     vdo = {".webm", ".MTS", ".M2TS", ".TS", ".mov",".mp4",
         ".m4p", ".m4v", ".mxf", ".avi"}
 
-    txt = {".docx", ".doc",".pdf"} ##I did IT!!
+    txt = {".docx", ".doc",".pdf", ".txt"} ##I did IT!!
 
     saved = {".xcf", ".ai"}
 
