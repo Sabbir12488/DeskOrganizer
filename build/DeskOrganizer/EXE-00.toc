@@ -41,8 +41,8 @@
   ('DeskOrganizer',
    'D:\\Python\\python_1\\DeskOrganizer\\DeskOrganizer.py',
    'PYSOURCE'),
-  ('python311.dll', 'C:\\Python311\\python311.dll', 'BINARY'),
   ('VCRUNTIME140.dll', 'C:\\Python311\\VCRUNTIME140.dll', 'BINARY'),
+  ('python311.dll', 'C:\\Python311\\python311.dll', 'BINARY'),
   ('_decimal.pyd', 'C:\\Python311\\DLLs\\_decimal.pyd', 'EXTENSION'),
   ('_hashlib.pyd', 'C:\\Python311\\DLLs\\_hashlib.pyd', 'EXTENSION'),
   ('select.pyd', 'C:\\Python311\\DLLs\\select.pyd', 'EXTENSION'),
@@ -61,7 +61,7 @@
  [],
  False,
  False,
- 1705570208,
+ 1705674033,
  [('run.exe',
    'C:\\Python311\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
    'EXECUTABLE')])

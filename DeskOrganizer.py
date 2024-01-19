@@ -8,6 +8,8 @@ import shutil
 #import pyfiglet
 import preloaded
 
+#taking permission to oparate
+permission = False
 
 def the_program():
     os.chdir("D:/Python/python_1/DeskOrganizer")
@@ -56,8 +58,7 @@ def the_program():
     dwn_dir = "C:/Users/User/Downloads"
     text_file.close()  #closing the text file
 
-    #taking permission to oparate
-    permission = False
+    
     # comparing all the files with the file extentions
     def is_img(file):
         return os.path.splitext(file)[1] in img
@@ -83,7 +84,9 @@ def the_program():
         if is_vdo(file) or is_txt(file) or is_img(file) or is_save_files(file) or is_screenshot(file):
             item_count += 1
 
+    global permission
     if item_count > 0:
+
         permission_command = input("Do you want to organize? Images[i], Videos[v], Docs[d], Saves[s] " + Fore.YELLOW + "[y/n]: " + Fore.RESET)
 
         if "y" in permission_command.lower():
@@ -92,7 +95,8 @@ def the_program():
             permission = False
         else:
             permission = False
-
+    else:
+        permission = False
 
 
 
@@ -170,14 +174,15 @@ def the_program():
         else:
             print(Back.RED+"There is nothing to move")
 
-while True:
-    os.system('cls')
-    the_program() 
-    restart_input = input("Do it again? [y/n]: ") 
-    if restart_input.lower() != "y": 
-        print("Goodbye") 
-        break 
-    elif restart_input.lower() == "y": 
-        continue 
+if permission == True:
+    while True:
+        os.system('cls')
+        the_program() 
+        restart_input = input("Do it again? [y/n]: ") 
+        if restart_input.lower() != "y": 
+            print("Goodbye") 
+            break 
+        elif restart_input.lower() == "y": 
+            continue 
 
 
